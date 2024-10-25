@@ -1,0 +1,13 @@
+
+<% if @comments.present? %>
+  <% @comments.each do |comment| %>
+    <p>
+      <%= comment.body %> 
+      <% if comment.created_at.present? %>
+        <i><%= time_ago_in_words(comment.created_at) %> ago</i>
+      <% else %>
+        <i>No Comments available.!</i>
+      <% end %>
+    </p>
+  <% end %>
+<% end %>
